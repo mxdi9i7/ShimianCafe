@@ -1,0 +1,43 @@
+#body {
+    margin: 0;
+}
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #263238;
+    color: white;
+    padding: 13px 0;
+}
+.navBar ul {
+    width: 300px;
+    margin: 0px auto;
+    color: white;
+    text-align: center
+}
+.navBar ul li {
+    margin: 10px 15px;
+    display: inline;
+    text-align: center;
+}
+.navBar ul li a {
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    vertical-align: middle;
+    font-weight: 700;
+}
+.navBar .setting-icon {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    color: white;
+}
+.navBar .user-icon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: white;
+}
