@@ -1,0 +1,14 @@
+      <div class="row" *ngFor="let post of posts">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{ post.author }}</span>
+              <p>{{ post.body }}</p>
+            </div>
+            <div class="card-action">
+              <i class="fa fa-like">{{ post.like_count }}</i>
+              <i class="fa fa-eyes">{{ post.view_count }}</i>
+            </div>
+          </div>
+        </div>
+      </div>
