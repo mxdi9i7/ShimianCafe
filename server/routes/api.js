@@ -1,37 +1,32 @@
 var express = require('express');
 var router = express.Router();
 var cors = require('cors');
-const MongoClient = require("mongodb").MongoClient
+var db = require('mongojs')('shimian')
+var app = express();
+db.on('error', function (err) {
+    console.log('database error', err)
+})
 
-var db
-
-MongoClient.connect('mongodb://localhost:27017/shimian', (err, connection) => {
-    if (err) {
-        
-    }
-    db = connection
+db.on('connect', function () {
+    console.log('database connected')
 })
 /* GET home page. */
 
 router.get('/posts', cors(), function(req, res, next) {
-   db.collection('tucaos')
-   .find()
-   .toArray((err, tucao)=> {
-       if (err) {
-           res.send(err);
-       } else {
-        console.log(tucao)
-        res.json(tucao)
-       }
-       var post1 = {
-           author: "Peter",
-           like_count: 123,
-           view_count: 111,
-           body: "Hello world"
-       }
-       
-       
+   db.tucao.find((err, posts) => {
+    if (err) {
+        res.send(err)       
+    } 
+   
+    res.json(posts)
    })
 });
-
+router.get('/posts/:id', cors(), function(req, res, next) {
+   db.tucao.findOne({_id: mongojs.ObjectId(req.params)}, (err, post) => {
+    if (err) {
+        res.send(err)       
+    }
+    res.json(post)
+   })
+});
 module.exports = router;

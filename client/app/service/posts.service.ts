@@ -11,7 +11,7 @@ export class PostsService {
 
   //get all posts from the API
   getAllPosts() {
-    return this.http.get('localhost:3000/api/posts')
+    return this.http.get('http://localhost:3000/api/posts')
       .map(res => res.json())
   }
 }
