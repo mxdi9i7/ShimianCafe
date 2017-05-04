@@ -24,7 +24,7 @@ router.get('/posts', cors(), function(req, res, next) {
 router.get('/posts/:id', cors(), function(req, res, next) {
    db.tucao.findOne({_id: mongojs.ObjectId(req.params)}, (err, post) => {
     if (err) {
-        res.send(err)       
+        res.send(err)
     }
     res.json(post)
    })
