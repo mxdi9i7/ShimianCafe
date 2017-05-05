@@ -4,20 +4,30 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'; 
 
+
+
+//services
+import {  PostsService } from './service/posts.service';
+
+//components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { PostComponent } from './post/post.component';
+import { TucaoPageComponent } from './tucao-page/tucao-page.component';
 
-//services
-import {  PostsService } from './service/posts.service';
+
 
 const ROUTES = [
   {
     path: '',
-    redirectTo: 'posts',
+    redirectTo: 'tucao',
     pathMatch: 'full'
+  },
+  {
+    path: 'tucao',
+    component: TucaoPageComponent
   },
   {
     path: 'posts',
@@ -35,7 +45,8 @@ const ROUTES = [
     NavbarComponent,
     HomePageComponent,
     UserPageComponent,
-    PostComponent
+    PostComponent,
+    TucaoPageComponent
   ],
   imports: [
     BrowserModule,
