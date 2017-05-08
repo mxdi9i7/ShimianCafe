@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostsService } from '../../service/posts.service';
+import { Post } from '../../models/post'
 
 @Component({
   selector: 'app-post',
@@ -9,7 +10,7 @@ import { PostsService } from '../../service/posts.service';
 export class PostComponent {
   //instantiate post to an empty array
 
-  posts: any = [];
+  posts: Post[];
 
   constructor(private tucaoPostsService: PostsService) { 
     //Retrieve posts from the API
