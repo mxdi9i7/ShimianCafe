@@ -29,7 +29,7 @@ router.get('/posts/:id', cors(), function(req, res, next) {
     res.json(post)
    })
 });
-router.post('/newpost', cors(), function(req, res, next) {
+router.post('/newTucaoPost', cors(), function(req, res, next) {
     var post = req.body;
     db.tucao.save(post, (err, post) => {
         if (err) { 

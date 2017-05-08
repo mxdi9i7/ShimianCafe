@@ -3,13 +3,13 @@
 <form action="" class="col s12" (submit)="addPost($event)">
     <div class="row">
           <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea" data-length="1000" name="body"></textarea>
+            <textarea id="textarea1" class="materialize-textarea" data-length="1000" [(ngModel)]="postBody" name="postBody"></textarea>
             <label for="textarea1">写下你心中的秘密</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="input_text" type="text" data-length="20" name="author">
+            <input id="input_text" type="text" data-length="20" [(ngModel)]="postAuthor" name="postAuthor">
             <label for="input_text">署名</label>
           </div>
         </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="row">
           <div class="col s12">
-              <a class="waves-effect waves-light btn-large col s12 submit-button">投稿</a>
+              <button type="submit" class="waves-effect waves-light btn-large col s12 submit-button">投稿</button>
           </div>
         </div>
         

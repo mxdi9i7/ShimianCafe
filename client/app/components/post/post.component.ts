@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostsService } from '../../service/posts.service';
+import { NewPostComponent } from '../../pages/new-post/new-post.component'
 import { Post } from '../../models/post'
 
 @Component({
@@ -15,7 +16,8 @@ export class PostComponent {
   constructor(private tucaoPostsService: PostsService) { 
     //Retrieve posts from the API
       this.tucaoPostsService.getAllTucaoPosts().subscribe(posts => {
-        this.posts = posts
+        this.posts = posts.reverse()
+        
       })
   }
      
