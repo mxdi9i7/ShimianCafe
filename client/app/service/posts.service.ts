@@ -10,8 +10,14 @@ export class PostsService {
   }
 
   //get all posts from the API
-  getAllPosts() {
-    return this.http.get('http://localhost:3000/api/posts')
+  getAllTucaoPosts() {
+    return this.http.get('http://localhost:3000/api/tucaoPosts')
       .map(res => res.json())
   }
+
+  //create a new post
+  // addPost() {
+  //   return this.http.post('http://localhost:3000/api/newpost')
+  //   .map(res => res.json())
+  // }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component'
-import { PostComponent } from '../post/post.component'
+import { NavbarComponent } from '../../navbar/navbar.component'
+import { PostComponent } from '../../post/post.component'
 
 @Component({
   selector: 'app-home-page',

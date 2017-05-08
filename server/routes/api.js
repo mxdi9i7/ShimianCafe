@@ -12,7 +12,7 @@ db.on('connect', function () {
 })
 /* GET home page. */
 
-router.get('/posts', cors(), function(req, res, next) {
+router.get('/tucaoPosts', cors(), function(req, res, next) {
    db.tucao.find((err, posts) => {
     if (err) {
         res.send(err)       
@@ -28,5 +28,16 @@ router.get('/posts/:id', cors(), function(req, res, next) {
     }
     res.json(post)
    })
+});
+router.post('/newpost', cors(), function(req, res, next) {
+    var post = req.body;
+    db.tucao.save(post, (err, post) => {
+        if (err) { 
+            res.send(err)
+        } else {
+            res.json(post)
+        }
+     })
+   
 });
 module.exports = router;

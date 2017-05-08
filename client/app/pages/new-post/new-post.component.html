@@ -1,0 +1,50 @@
+<div class="row newPostComponent">
+  <a class="btn-floating btn-large waves-effect waves-light red close-button" routerLink="/"><i class="fa fa-times"></i></a>
+<form action="" class="col s12" (submit)="addPost($event)">
+    <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" data-length="1000" name="body"></textarea>
+            <label for="textarea1">写下你心中的秘密</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="input_text" type="text" data-length="20" name="author">
+            <label for="input_text">署名</label>
+          </div>
+        </div>
+        <div class="row checkBoxes">
+          <div class="input-field col s12">
+            <label>选择标签（可多选）</label>
+            <div class="tagGroup">
+                 <p>
+                    <input type="checkbox" class="filled-in" id="xiapyuantag"/>
+                    <label for="xiapyuantag">校园</label>
+                  </p>
+                  <p>
+                    <input type="checkbox" class="filled-in" id="tucaotag"/>
+                    <label for="tucaotag">吐槽</label>
+                  </p>
+                  <p>
+                    <input type="checkbox" class="filled-in" id="biaobaitag"/>
+                    <label for="biaobaitag">表白</label>
+                  </p>
+                  <p>
+                    <input type="checkbox" class="filled-in" id="guanshuitag"/>
+                    <label for="guanshuitag">灌水</label>
+                  </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+              <a class="waves-effect waves-light btn-large col s12 submit-button">投稿</a>
+          </div>
+        </div>
+        
+
+</form>
+</div>
+<script>
+    $('input#input_text, textarea#textarea1').characterCounter();
+</script>

@@ -11,11 +11,15 @@ import {  PostsService } from './service/posts.service';
 
 //components
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { UserPageComponent } from './user-page/user-page.component';
-import { PostComponent } from './post/post.component';
-import { TucaoPageComponent } from './tucao-page/tucao-page.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { UserPageComponent } from './pages/user-page/user-page.component';
+import { PostComponent } from './components/post/post.component';
+import { TucaoPageComponent } from './pages/tucao-page/tucao-page.component';
+import { PostButtonComponent } from './components/post-button/post-button.component';
+import { NewPostComponent } from './pages/new-post/new-post.component';
+
+
 
 
 
@@ -24,6 +28,10 @@ const ROUTES = [
     path: '',
     redirectTo: 'tucao',
     pathMatch: 'full'
+  },
+  {
+    path: 'newpost',
+    component: NewPostComponent
   },
   {
     path: 'tucao',
@@ -46,7 +54,9 @@ const ROUTES = [
     HomePageComponent,
     UserPageComponent,
     PostComponent,
-    TucaoPageComponent
+    TucaoPageComponent,
+    PostButtonComponent,
+    NewPostComponent,
   ],
   imports: [
     BrowserModule,

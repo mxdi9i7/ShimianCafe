@@ -1,0 +1,14 @@
+.newPostComponent {
+    margin: 50px;
+}
+.newPostComponent .tagGroup {
+    margin-top: 30px;
+}
+.close-button {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+}
+.submit-button {
+    margin-top: 30px;
+}

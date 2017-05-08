@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PostsService } from '../service//posts.service';
+import { PostsService } from '../../service/posts.service';
 
 @Component({
   selector: 'app-post',
@@ -11,11 +11,10 @@ export class PostComponent {
 
   posts: any = [];
 
-  constructor(private postsService: PostsService) { 
+  constructor(private tucaoPostsService: PostsService) { 
     //Retrieve posts from the API
-      this.postsService.getAllPosts().subscribe(posts => {
+      this.tucaoPostsService.getAllTucaoPosts().subscribe(posts => {
         this.posts = posts
-        console.log(posts)
       })
   }
      
